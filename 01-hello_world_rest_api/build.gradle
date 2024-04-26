@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.5'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'com.palantir.docker' version '0.36.0'
+}
+
+group = 'hodlene.k8s'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+// Define the tag here
+def dockerImgName = "moon1z10/k8s-learning:${project.group}_${project.name}-${project.version}"
+docker {
+	println("gradle docker build start = ${dockerImgName}")
+	name dockerImgName
+	files tasks.bootJar.outputs.files
+	buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name])
+}
+
+// Create a task for pushing the Docker image
+tasks.register('pushDockerImage') {
+	exec {
+		commandLine 'docker', 'push', dockerImgName
+	}
+}
