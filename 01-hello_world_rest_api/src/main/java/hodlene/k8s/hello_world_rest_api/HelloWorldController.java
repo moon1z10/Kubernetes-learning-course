@@ -19,7 +19,7 @@ public class HelloWorldController {
 
     @GetMapping(path = "/hello-world")
     public String helloWorld() {
-        return "Hello World " + " V1 " + service.retrieveInstanceInfo();
+        return "Hello World " + " V2 " + service.retrieveInstanceInfo();
     }
 
     @GetMapping(path = "/hello-world-bean")

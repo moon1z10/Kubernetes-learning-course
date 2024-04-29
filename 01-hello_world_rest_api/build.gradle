@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'hodlene.k8s'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 
 java {
 	sourceCompatibility = '17'
@@ -27,7 +27,7 @@ tasks.named('test') {
 }
 
 // Define the tag here
-def dockerImgName = "moon1z10/k8s-learning:${project.group}_${project.name}-${project.version}"
+def dockerImgName = "moon1z10/k8s-learning:${project.name}-${project.version}"
 docker {
 	println("gradle docker build start = ${dockerImgName}")
 	name dockerImgName
