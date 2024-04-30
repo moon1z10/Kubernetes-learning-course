@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Kubernetes-learning-course.iml" filepath="$PROJECT_DIR$/Kubernetes-learning-course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Kubernetes-learning-course.iml" filepath="$PROJECT_DIR$/.idea/Kubernetes-learning-course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Todo_H2_Web_Application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Todo_H2_Web_Application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hellojpa.main.iml" filepath="$PROJECT_DIR$/.idea/modules/hellojpa.main.iml" />
     </modules>
   </component>
 </project>

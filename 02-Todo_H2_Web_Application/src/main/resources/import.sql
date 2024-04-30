@@ -1,0 +1,3 @@
+insert into TODO (ID, DESCRIPTION, IS_DONE, TARGET_DATE, USERNAME) values (10001, 'Learn Spring Boot', false, CURRENT_TIMESTAMP(), 'admin');
+insert into TODO (ID, DESCRIPTION, IS_DONE, TARGET_DATE, USERNAME) values (10002, 'Learn Vue.js', false, CURRENT_TIMESTAMP(), 'admin');
+insert into TODO (ID, DESCRIPTION, IS_DONE, TARGET_DATE, USERNAME) values (10003, 'Learn to Drive', false, CURRENT_TIMESTAMP(), 'admin');

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/01-hello-world-respt-api" />
     <file type="web" url="file://$PROJECT_DIR$/01-hello_world_rest_api" />
+    <file type="web" url="file://$PROJECT_DIR$/02-Todo_H2_Web_Application" />
+    <file type="web" url="file://$PROJECT_DIR$/hellojpa" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
