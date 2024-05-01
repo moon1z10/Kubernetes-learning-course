@@ -3,6 +3,7 @@ plugins {
     id 'war'
     id 'org.springframework.boot' version '3.2.5'
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'com.palantir.docker' version '0.36.0'
 }
 
 group = 'hodlene.k8s'
@@ -55,4 +56,20 @@ bootWar {
     archiveBaseName = "${project.name}"
     archiveFileName = "${project.name}-${project.version}.war"
     archiveVersion = "${project.version}"
+}
+
+// Define the tag here
+def dockerImgName = "moon1z10/k8s-learning:${project.name}-${project.version}"
+docker {
+    println("gradle docker build start = ${dockerImgName}")
+    name dockerImgName
+    files tasks.bootWar.outputs.files
+    buildArgs(['WAR_FILE': tasks.bootWar.outputs.files.singleFile.name])
+}
+
+// Create a task for pushing the Docker image
+tasks.register('pushDockerImage') {
+    exec {
+        commandLine 'docker', 'push', dockerImgName
+    }
 }
