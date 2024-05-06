@@ -19,13 +19,27 @@ spec:
       containers:
         - env:
             - name: MYSQL_DATABASE
-              value: todos
+              valueFrom:
+                configMapKeyRef:
+                  key: MYSQL_DATABASE
+                  name: todo-web-application-config
             - name: MYSQL_PASSWORD
-              value: dummytodos
+#              value: dummytodos
+              valueFrom:
+                secretKeyRef:
+                  key: MYSQL_PASSWORD
+                  name: todo-web-application-secrets
             - name: MYSQL_ROOT_PASSWORD
-              value: dummypassword
+#              value: dummypassword
+              valueFrom:
+                secretKeyRef:
+                  key: MYSQL_ROOT_PASSWORD
+                  name: todo-web-application-secrets
             - name: MYSQL_USER
-              value: todos-user
+              valueFrom:
+                configMapKeyRef:
+                  key: MYSQL_USER
+                  name: todo-web-application-config
           image: mysql:latest
           name: mysql
           ports:
