@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1  # API 버전 업데이트
+kind: VirtualService
+metadata:
+  name: hello-world-virtual-services      # 리소스 이름 조정
+spec:
+  hosts:
+    - "*"                                  # 모든 호스트에 대해 적용
+  gateways:
+    - hello-world-gateway                  # 이 VirtualService가 적용될 게이트웨이
+  http:
+    - match:                                # 요청 매칭 규칙
+        - uri:
+            prefix: /hello-world             # URI가 /hello-world로 시작하는 경우
+      route:
+        - destination:
+            host: hello-world-rest-api       # 대상 서비스의 호스트 이름
+            port:
+              number: 8080                   # 대상 서비스의 포트
