@@ -1,0 +1,6 @@
+image: moon1z10/k8s-learning:currency_conversion-0.0.1-SNAPSHOT
+imagePullPolicy: Always
+port: 8100
+servicetype: LoadBalancer
+replicas: 1
+name: currency-conversion
